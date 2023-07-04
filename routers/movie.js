@@ -9,7 +9,7 @@ const {
   deleteMovie,
 } = require('../controllers/movie')
 router.post('/create', verifyAdmin, create)
-router.get('/getAllMovie', verifyToken, getallmovie)
+router.get('/getAllMovie', getallmovie)
 router.put('/updateMovie/:id', verifyAdmin, updateMovie)
 router.post('/getParticularMovie/:id', getParticularMovie)
 router.delete('/deleteMovie/:id', verifyAdmin, deleteMovie)
