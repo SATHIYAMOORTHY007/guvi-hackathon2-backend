@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const connectDB = require('../backend/db/mongoose')
+const connectDB = require('./db/mongoose')
 const dotenv = require('dotenv').config()
 const bodyParser = require('body-parser')
 const port = process.env.PORT || 4001
