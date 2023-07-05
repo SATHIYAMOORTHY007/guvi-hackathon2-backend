@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { verifyAdmin, verifyToken } = require('../utils/verifyToken')
+
 const {
   create,
   getallmovie,
@@ -8,9 +8,9 @@ const {
   getParticularMovie,
   deleteMovie,
 } = require('../controllers/movie')
-router.post('/create', verifyAdmin, create)
+router.post('/create', create)
 router.get('/getAllMovie', getallmovie)
-router.put('/updateMovie/:id', verifyAdmin, updateMovie)
+router.put('/updateMovie/:id', updateMovie)
 router.post('/getParticularMovie/:id', getParticularMovie)
-router.delete('/deleteMovie/:id', verifyAdmin, deleteMovie)
+router.delete('/deleteMovie/:id', deleteMovie)
 module.exports = router
