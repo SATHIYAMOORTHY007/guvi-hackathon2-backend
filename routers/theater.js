@@ -18,7 +18,7 @@ router.post('/getParticularTheater/:id', getParticularTheater)
 router.get('/getAllTheater', verifyToken, getAllTheater)
 router.delete('/deleteTheater/:id', verifyAdmin, deleteTheater)
 router.put('/updateTheater/:id', verifyAdmin, updateTheater)
-router.put('/updateSeats/:id', verifyToken, updateSeats)
+router.put('/updateSeats/:id', updateSeats)
 router.post('/getseats/:id', getseats)
 
 module.exports = router
