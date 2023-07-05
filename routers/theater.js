@@ -12,12 +12,12 @@ const {
 } = require('../controllers/theater')
 const { verifyAdmin, verifyToken } = require('../utils/verifyToken')
 
-router.post('/createTheater', verifyAdmin, createTheater)
+router.post('/createTheater', createTheater)
 router.post('/getTheaterbyid/:movie_id', getTheaterbyid)
 router.post('/getParticularTheater/:id', getParticularTheater)
 router.get('/getAllTheater', verifyToken, getAllTheater)
 router.delete('/deleteTheater/:id', verifyAdmin, deleteTheater)
-router.put('/updateTheater/:id', verifyAdmin, updateTheater)
+router.put('/updateTheater/:id', updateTheater)
 router.put('/updateSeats/:id', updateSeats)
 router.post('/getseats/:id', getseats)
 
