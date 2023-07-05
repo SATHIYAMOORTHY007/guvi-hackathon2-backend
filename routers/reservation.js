@@ -8,7 +8,7 @@ const {
   getreservedUser,
 } = require('../controllers/reservation')
 
-router.post('/createReservation', verifyToken, createReservation)
+router.post('/createReservation', createReservation)
 router.post('/getreservation/:id', getreservation)
 router.post('/getreservedUser/:movie_id/:theater_id', getreservedUser)
 router.post('/getAllReservation', getAllReservation)
