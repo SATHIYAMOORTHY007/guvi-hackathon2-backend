@@ -120,6 +120,7 @@ const getallUser = async (req, res) => {
 }
 
 const updateQuery = async (req, res) => {
+  const id = req.params.id
   const { query } = req.body
 
   try {

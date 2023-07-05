@@ -6,7 +6,7 @@ const {
   createShowtime,
   getshowTimes,
 } = require('../controllers/showtime')
-const { verifyAdmin, verifyToken } = require('../utils/verifyToken')
+
 router.post('/createShowtime', createShowtime)
 router.get('/getAllshowTimes', getAllshowTimes)
 router.get('/getshowTimes/:movieid/:cinimaid', getshowTimes)
