@@ -5,7 +5,6 @@ const sendEmail = require('../utils/email')
 const Movie = require('../models/movie')
 const Theater = require('../models/theater')
 const createReservation = async (req, res) => {
-  console.log('reservation', req.body)
   try {
     const reservation = await Reservation.create(req.body)
     await reservation.save()
