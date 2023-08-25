@@ -5,14 +5,15 @@ const sendEmail = require('../utils/email')
 const Movie = require('../models/movie')
 const Theater = require('../models/theater')
 const createReservation = async (req, res) => {
+  console.log('reservation', req.body)
   try {
     const reservation = await Reservation.create(req.body)
-
-    const QRCode = await generateQR(
-      `http://localhost:3001/checkin/${reservation._id}`,
-    )
     await reservation.save()
-    const htmlContent = `
+    /*    const QRCode = await generateQR(
+      `http://localhost:3001/checkin/${reservation._id}`,
+    ) */
+
+    /*  const htmlContent = `
     <h1><strong>Invitation For Movie</strong></h1>
     <p>Hi, You have been invited by pixel cinima</p>
     <p>Movie name: ${reservation.movieId}</p>
@@ -23,16 +24,17 @@ const createReservation = async (req, res) => {
     <img src="${QRCode}" alt="cinema Image"/>
     <br/>
   `
+
     const { email } = req.body
 
     sendEmail({
       email: email,
       subject: 'ticket',
-      html: htmlContent,
-    })
+      text: 'booked your show successfully',
+    }) */
     return res.status(201).send({ reservation })
   } catch (err) {
-    return res.status(400).json({ message: err.message })
+    return res.status(400).json({ message: err })
   }
 }
 

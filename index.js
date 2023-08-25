@@ -12,7 +12,7 @@ const showtime = require('./routers/showtime')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const authRouter = require('./routers/auth')
-
+const payment = require('./routers/pay')
 var nodemailer = require('nodemailer')
 
 app.use(cors())
@@ -24,8 +24,8 @@ app.use('/api/v1', movie)
 app.use('/api/v1', reservation)
 app.use('/api/v1', theater)
 app.use('/api/v1', showtime)
-
-app.listen(port, () => {
+app.use('/api/v1', payment)
+app.listen(process.env.port, () => {
   console.log(`port number ${port}`)
   connectDB()
 })

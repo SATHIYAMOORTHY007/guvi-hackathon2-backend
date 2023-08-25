@@ -25,12 +25,10 @@ const reservationSchema = new Schema({
   movieId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Movie',
-    required: true,
   },
   theaterId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Cinema',
-    required: true,
   },
   Qrcode: {
     type: String,
