@@ -35,7 +35,7 @@ app.use('/api/v1', reservation)
 app.use('/api/v1', theater)
 app.use('/api/v1', showtime)
 app.use('/api/v1', payment)
-app.listen(process.env.port, () => {
+app.listen(port, () => {
   console.log(`port number ${port}`)
   connectDB()
 })
