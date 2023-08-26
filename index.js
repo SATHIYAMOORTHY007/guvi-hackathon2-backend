@@ -15,7 +15,17 @@ const authRouter = require('./routers/auth')
 const payment = require('./routers/pay')
 var nodemailer = require('nodemailer')
 
-app.use(cors())
+app.use((req, res, next) => {
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://dapper-cucurucho-7b2a5e.netlify.app',
+  )
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept',
+  )
+  next()
+})
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.json())
