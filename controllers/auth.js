@@ -10,6 +10,7 @@ const sendEmail = require('../utils/email')
 const register = async (req, res) => {
   try {
     const { username, email_id, pwd } = req.body
+    console.log(req.body)
     if (!email_id || !pwd)
       return res.status(400).json({ message: 'email or password required' })
     //duplicated email
