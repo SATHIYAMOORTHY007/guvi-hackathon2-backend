@@ -1,8 +1,9 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
-const stripe = require('stripe')(process.env.stripe)
+const stripe = require('stripe')(process.env.strip_key)
 
 const pay = async (req, res) => {
+  console.log(req.body)
   const data = req.body
   const price = parseInt(data.total)
   const a = [data]
