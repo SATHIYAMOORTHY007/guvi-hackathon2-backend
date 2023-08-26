@@ -3,11 +3,10 @@ const dotenv = require('dotenv').config()
 const stripe = require('stripe')(process.env.strip_key)
 
 const pay = async (req, res) => {
-  const data = req.body
-  const price = parseInt(data.total)
-  const a = [data]
-
   try {
+    const data = req.body
+    const price = parseInt(data.total)
+    const a = [data]
     const lineItems = a.map((data) => ({
       price_data: {
         currency: 'inr',
@@ -23,8 +22,8 @@ const pay = async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: process.env.success,
-      cancel_url: process.env.failed,
+      success_url: 'https://bookmyshow-ukl3.onrender.com/success',
+      cancel_url: 'https://bookmyshow-ukl3.onrender.com/failed',
     })
 
     res.json({ id: session.id })
