@@ -22,7 +22,7 @@ const pay = async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'https://dapper-cucurucho-7b2a5e.netlify.app/success',
+      success_url: 'https://dapper-cucurucho-7b2a5e.netlify.app/payment',
       cancel_url: 'https://dapper-cucurucho-7b2a5e.netlify.app/failed',
     })
 
