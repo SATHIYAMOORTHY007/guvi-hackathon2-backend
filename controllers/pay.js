@@ -22,8 +22,8 @@ const pay = async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'https://bookmyshow-ukl3.onrender.com/success',
-      cancel_url: 'https://bookmyshow-ukl3.onrender.com/failed',
+      success_url: `https://bookmyshow-ukl3.onrender.com/success`,
+      cancel_url: `https://bookmyshow-ukl3.onrender.com/failed`,
     })
 
     res.json({ id: session.id })
