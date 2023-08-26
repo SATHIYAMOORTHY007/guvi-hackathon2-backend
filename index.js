@@ -15,17 +15,7 @@ const authRouter = require('./routers/auth')
 const payment = require('./routers/pay')
 var nodemailer = require('nodemailer')
 
-app.use((req, res, next) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://dapper-cucurucho-7b2a5e.netlify.app',
-  )
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept',
-  )
-  next()
-})
+app.use(cors())
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.json())
@@ -36,6 +26,5 @@ app.use('/api/v1', theater)
 app.use('/api/v1', showtime)
 app.use('/api/v1', payment)
 app.listen(port, () => {
-  console.log(`port number ${port}`)
   connectDB()
 })
