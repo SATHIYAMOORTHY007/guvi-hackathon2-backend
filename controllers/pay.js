@@ -25,8 +25,9 @@ const pay = async (req, res) => {
       success_url: 'https://dapper-cucurucho-7b2a5e.netlify.app/payment',
       cancel_url: 'https://dapper-cucurucho-7b2a5e.netlify.app/failed',
     })
-
-    res.json({ id: session.id })
+    console.log(session)
+    /* res.json({ id: session.id }) */
+    res.set('Access-Control-Allow-Origin', '*').redirect(303, session.url)
   } catch (err) {
     res.json(err)
   }
