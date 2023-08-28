@@ -53,7 +53,7 @@ const getreservation = async (req, res) => {
 const getreservedUser = async (req, res) => {
   const movie_id = req.params.movie_id
   const theater_id = req.params.theater_id
-  console.log(req.params)
+
   try {
     const reservation = await Reservation.find({
       movieId: movie_id,
