@@ -131,9 +131,29 @@ const createTheater = async (req, res) => {
       { id: 100, number: 'H8' },
     ],
   ]
-  req.body.seats = row
+
+  const {
+    name,
+    ticketPrice,
+    city,
+    image,
+    movieid,
+    startsAt,
+    date,
+  } = req.body.data
+  const seats = row
+
   try {
-    const theater = await Theater.create(req.body)
+    const theater = await Theater.create({
+      name,
+      ticketPrice,
+      city,
+      image,
+      movieid,
+      startsAt,
+      date,
+      seats,
+    })
     theater.save()
     res.status(201).send(theater)
   } catch (err) {

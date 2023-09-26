@@ -6,6 +6,7 @@ const Movie = require('../models/movie')
 const Theater = require('../models/theater')
 const createReservation = async (req, res) => {
   try {
+    console.log(req.body)
     const reservation = await Reservation.create(req.body)
     await reservation.save()
     /*    const QRCode = await generateQR(
